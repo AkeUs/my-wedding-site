@@ -152,6 +152,12 @@ figure {
   width: 100%;
 }
 
+@media(min-width: 300px) and (max-width: 640px) {
+  .fh5co-cover {
+    background-position: 600px 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .fh5co-cover,
   .fh5co-hero {
