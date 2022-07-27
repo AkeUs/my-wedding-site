@@ -1,0 +1,28 @@
+version: "3.9"
+
+networks:
+  net:
+    driver: bridge
+
+services:
+  web-source:
+    image: nginx:1.23-alpine
+    container_name: web-source
+    restart: always
+    ports:
+      - "9004:80"
+    volumes:
+      - "./src:/usr/share/nginx/html"
+    networks:
+      - net
+
+  web-publish:
+    image: nginx:1.23-alpine
+    container_name: web-publish
+    restart: always
+    ports:
+      - "9005:80"
+    volumes:
+      - "./publish:/usr/share/nginx/html"
+    networks:
+      - net
